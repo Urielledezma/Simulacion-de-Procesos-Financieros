@@ -1,0 +1,37 @@
+# --- Python -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.python-version
+
+# --- Entornos virtuales -------------------------------------------------------
+.venv/
+venv/
+env/
+
+# --- Jupyter ------------------------------------------------------------------
+# Las salidas de los notebooks SÍ se versionan: las celdas de interpretación
+# citan los números que producen, y sin ellas el texto queda sin sustento. Lo
+# que se ignora es el andamiaje que Jupyter regenera en cada sesión.
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# --- Credenciales -------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --- Office -------------------------------------------------------------------
+# Archivos de bloqueo que Word y Excel crean mientras un documento está abierto.
+~$*
+
+# --- Residuos de pruebas locales ----------------------------------------------
+.portable-acceptance-*/
+
+# --- Sistema operativo y editores ---------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
