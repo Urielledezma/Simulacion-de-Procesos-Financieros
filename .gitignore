@@ -25,9 +25,6 @@ env/
 # Archivos de bloqueo que Word y Excel crean mientras un documento está abierto.
 ~$*
 
-# --- Residuos de pruebas locales ----------------------------------------------
-.portable-acceptance-*/
-
 # --- Sistema operativo y editores ---------------------------------------------
 .DS_Store
 Thumbs.db
