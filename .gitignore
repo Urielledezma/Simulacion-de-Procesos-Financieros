@@ -38,4 +38,4 @@ desktop.ini
 
 # --- Archivo local ------------------------------------------------------------
 # Borradores superados que se conservan en disco pero no se publican.
-archives/
+.archives/
