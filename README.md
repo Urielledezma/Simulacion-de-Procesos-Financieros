@@ -26,6 +26,7 @@ griegas.
 | [`C04 - Simulación de dados y ventanas móviles de rendimiento.ipynb`](C04%20-%20Simulaci%C3%B3n%20de%20dados%20y%20ventanas%20m%C3%B3viles%20de%20rendimiento.ipynb) | Clase | Probabilidad simulada sobre un espacio muestral extenso y estabilidad de media y desviación en ventanas móviles |
 | [`C05 - Valuación con datos de mercado y separación train-test.ipynb`](C05%20-%20Valuaci%C3%B3n%20con%20datos%20de%20mercado%20y%20separaci%C3%B3n%20train-test.ipynb) | Clase | Estimación de parámetros con datos reales, separación temporal de la muestra y rango razonable de precios |
 | [`C07 - Griegas por diferencias finitas.ipynb`](C07%20-%20Griegas%20por%20diferencias%20finitas.ipynb) | Clase | Delta, gamma, vega, theta y rho calculadas como cocientes de diferencias y validadas contra su forma cerrada |
+| [`C08 - Trayectorias del precio y valuación de una opción asiática.ipynb`](C08%20-%20Trayectorias%20del%20precio%20y%20valuaci%C3%B3n%20de%20una%20opci%C3%B3n%20asi%C3%A1tica.ipynb) | Clase | Trayectorias completas del precio con envolvente al 95% y valuación comparada de una call europea contra una asiática |
 | [`T01 - Caminata aleatoria.ipynb`](T01%20-%20Caminata%20aleatoria.ipynb) | Tarea | Simulación de trayectorias de capital y comportamiento de una caminata aleatoria |
 | [`T02 - Análisis de sensibilidad.ipynb`](T02%20-%20An%C3%A1lisis%20de%20sensibilidad.ipynb) | Tarea | Valuación de calls y puts por Monte Carlo, verificación de paridad y sensibilidad a los cinco parámetros del modelo |
 
@@ -56,9 +57,11 @@ segundo descarga precios de Yahoo Finance en tiempo de ejecución, por lo cual a
 necesitan que esas fuentes estén disponibles antes de correrlos. El caso de `C05` merece
 una advertencia adicional: al depender de una descarga en vivo, sus cifras se mueven
 conforme avanza el mercado y no reproducen exactamente las que aparecen en las celdas
-guardadas. El resto de los notebooks es autocontenido y reproducible, dado que todos
-fijan una semilla al inicio y por ello entregan exactamente los mismos números que
-aparecen en las celdas de interpretación.
+guardadas. El resto de los notebooks es autocontenido, y salvo `C04`, que
+sortea sus dados sin semilla, todos la fijan al inicio y por ello entregan exactamente
+los mismos números que aparecen en las celdas de interpretación. El caso de `C07` es
+distinto por no recurrir a la simulación en ningún punto, ya que sus derivadas se
+calculan sobre una malla determinista.
 
 Los notebooks se versionan con sus salidas incluidas, ya que las interpretaciones citan
 valores concretos y perderían su referencia si las celdas se limpiaran.
@@ -69,7 +72,7 @@ valores concretos y perderían su referencia si las celdas se limpiaran.
 
 ```text
 .
-├── C01-C02 … C07/          # Notebooks de clase, numerados por sesión
+├── C01-C02 … C08/          # Notebooks de clase, numerados por sesión
 ├── T01 … T02/              # Tareas entregables
 ├── data/                   # Series de precios usadas por los notebooks
 ├── docs/                   # Plantilla de entregables en Word
