@@ -29,6 +29,7 @@ griegas.
 | [`C08 - Trayectorias del precio y valuación de una opción asiática.ipynb`](C08%20-%20Trayectorias%20del%20precio%20y%20valuaci%C3%B3n%20de%20una%20opci%C3%B3n%20asi%C3%A1tica.ipynb) | Clase | Trayectorias completas del precio con envolvente al 95% y valuación comparada de una call europea contra una asiática |
 | [`T01 - Caminata aleatoria.ipynb`](T01%20-%20Caminata%20aleatoria.ipynb) | Tarea | Simulación de trayectorias de capital y comportamiento de una caminata aleatoria |
 | [`T02 - Análisis de sensibilidad.ipynb`](T02%20-%20An%C3%A1lisis%20de%20sensibilidad.ipynb) | Tarea | Valuación de calls y puts por Monte Carlo, verificación de paridad y sensibilidad a los cinco parámetros del modelo |
+| [`T03 - Griegas y aproximación del valor de una opción.ipynb`](T03%20-%20Griegas%20y%20aproximaci%C3%B3n%20del%20valor%20de%20una%20opci%C3%B3n.ipynb) | Tarea | Lectura de tres contratos a partir de sus sensibilidades, elección por escenario y alcance de una aproximación de Taylor a seis meses |
 
 ---
 
@@ -73,7 +74,7 @@ valores concretos y perderían su referencia si las celdas se limpiaran.
 ```text
 .
 ├── C01-C02 … C08/          # Notebooks de clase, numerados por sesión
-├── T01 … T02/              # Tareas entregables
+├── T01 … T03/              # Tareas entregables
 ├── data/                   # Series de precios usadas por los notebooks
 ├── docs/                   # Plantilla de entregables en Word
 ├── requirements.txt
