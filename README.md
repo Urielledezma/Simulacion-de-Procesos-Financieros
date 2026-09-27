@@ -12,8 +12,8 @@ redactados con la misma estructura: portada con metadatos, índice, secciones nu
 una interpretación escrita después de cada resultado, de manera que cada archivo pueda
 leerse de forma independiente sin necesidad de haber estado en la sesión correspondiente.
 El hilo que los une va de los números pseudoaleatorios que alimentan cualquier simulación
-hasta la valuación de opciones y la medición puntual de su exposición mediante las
-griegas.
+hasta la valuación de opciones exóticas y de barrera, pasando por la medición puntual
+de su exposición mediante las griegas.
 
 ---
 
@@ -27,6 +27,8 @@ griegas.
 | [`C05 - Valuación con datos de mercado y separación train-test.ipynb`](C05%20-%20Valuaci%C3%B3n%20con%20datos%20de%20mercado%20y%20separaci%C3%B3n%20train-test.ipynb) | Clase | Estimación de parámetros con datos reales, separación temporal de la muestra y rango razonable de precios |
 | [`C07 - Griegas por diferencias finitas.ipynb`](C07%20-%20Griegas%20por%20diferencias%20finitas.ipynb) | Clase | Delta, gamma, vega, theta y rho calculadas como cocientes de diferencias y validadas contra su forma cerrada |
 | [`C08 - Trayectorias del precio y valuación de una opción asiática.ipynb`](C08%20-%20Trayectorias%20del%20precio%20y%20valuaci%C3%B3n%20de%20una%20opci%C3%B3n%20asi%C3%A1tica.ipynb) | Clase | Trayectorias completas del precio con envolvente al 95% y valuación comparada de una call europea contra una asiática |
+| [`C09 - Valuación de opciones exóticas y de barrera.ipynb`](C09%20-%20Valuaci%C3%B3n%20de%20opciones%20ex%C3%B3ticas%20y%20de%20barrera.ipynb) | Clase | Valor de la put europea, asiática y lookback sobre trayectorias completas, y las cuatro variantes de barrera verificadas con la paridad entre in y out |
+| [`C10 - Repaso integral.ipynb`](C10%20-%20Repaso%20integral.ipynb) | Clase | Repaso integral con datos reales de META: payoffs, separación temporal y comparación entre el precio observado y los escenarios simulados |
 | [`T01 - Caminata aleatoria.ipynb`](T01%20-%20Caminata%20aleatoria.ipynb) | Tarea | Simulación de trayectorias de capital y comportamiento de una caminata aleatoria |
 | [`T02 - Análisis de sensibilidad.ipynb`](T02%20-%20An%C3%A1lisis%20de%20sensibilidad.ipynb) | Tarea | Valuación de calls y puts por Monte Carlo, verificación de paridad y sensibilidad a los cinco parámetros del modelo |
 | [`T03 - Griegas y aproximación del valor de una opción.ipynb`](T03%20-%20Griegas%20y%20aproximaci%C3%B3n%20del%20valor%20de%20una%20opci%C3%B3n.ipynb) | Tarea | Lectura de tres contratos a partir de sus sensibilidades, elección por escenario y alcance de una aproximación de Taylor a seis meses |
@@ -52,17 +54,18 @@ pip install numpy matplotlib scipy pandas yfinance
 
 ## Notas de ejecución
 
-Los archivos `C04` y `C05` requieren datos externos, ya que el primero lee
-`data/aapl_historical_data_2026_h1.csv` desde la ruta relativa del repositorio y el
-segundo descarga precios de Yahoo Finance en tiempo de ejecución, por lo cual ambos
-necesitan que esas fuentes estén disponibles antes de correrlos. El caso de `C05` merece
+Los archivos `C04`, `C05` y `C10` requieren datos externos, ya que el primero lee
+`data/aapl_historical_data_2026_h1.csv` desde la ruta relativa del repositorio y los otros
+dos descargan precios de Yahoo Finance en tiempo de ejecución, por lo cual todos necesitan
+que esas fuentes estén disponibles antes de correrlos. Los casos de `C05` y `C10` merecen
 una advertencia adicional: al depender de una descarga en vivo, sus cifras se mueven
 conforme avanza el mercado y no reproducen exactamente las que aparecen en las celdas
-guardadas. El resto de los notebooks es autocontenido, y salvo `C04`, que
-sortea sus dados sin semilla, todos la fijan al inicio y por ello entregan exactamente
-los mismos números que aparecen en las celdas de interpretación. El caso de `C07` es
-distinto por no recurrir a la simulación en ningún punto, ya que sus derivadas se
-calculan sobre una malla determinista.
+guardadas, de modo que la semilla fija el componente simulado pero no el componente
+descargado. El resto de los notebooks es autocontenido, y salvo `C04`, que sortea sus
+dados sin semilla, todos la fijan al inicio y por ello entregan exactamente los mismos
+números que aparecen en las celdas de interpretación. El caso de `C07` es distinto por no
+recurrir a la simulación en ningún punto, ya que sus derivadas se calculan sobre una malla
+determinista.
 
 Los notebooks se versionan con sus salidas incluidas, ya que las interpretaciones citan
 valores concretos y perderían su referencia si las celdas se limpiaran.
@@ -73,7 +76,7 @@ valores concretos y perderían su referencia si las celdas se limpiaran.
 
 ```text
 .
-├── C01-C02 … C08/          # Notebooks de clase, numerados por sesión
+├── C01-C02 … C10/          # Notebooks de clase, numerados por sesión
 ├── T01 … T03/              # Tareas entregables
 ├── data/                   # Series de precios usadas por los notebooks
 ├── docs/                   # Plantilla de entregables en Word
