@@ -29,9 +29,11 @@ de su exposición mediante las griegas.
 | [`C08 - Trayectorias del precio y valuación de una opción asiática.ipynb`](C08%20-%20Trayectorias%20del%20precio%20y%20valuaci%C3%B3n%20de%20una%20opci%C3%B3n%20asi%C3%A1tica.ipynb) | Clase | Trayectorias completas del precio con envolvente al 95% y valuación comparada de una call europea contra una asiática |
 | [`C09 - Valuación de opciones exóticas y de barrera.ipynb`](C09%20-%20Valuaci%C3%B3n%20de%20opciones%20ex%C3%B3ticas%20y%20de%20barrera.ipynb) | Clase | Valor de la put europea, asiática y lookback sobre trayectorias completas, y las cuatro variantes de barrera verificadas con la paridad entre in y out |
 | [`C10 - Repaso integral.ipynb`](C10%20-%20Repaso%20integral.ipynb) | Clase | Repaso integral con datos reales de META: payoffs, separación temporal y comparación entre el precio observado y los escenarios simulados |
+| [`C11 - Monte Carlo y Error en el mismo.ipynb`](C11%20-%20Monte%20Carlo%20y%20Error%20en%20el%20mismo.ipynb) | Clase | Convergencia del precio de Monte Carlo hacia Black-Scholes y caída del error con la raíz del número de simulaciones |
 | [`T01 - Caminata aleatoria.ipynb`](T01%20-%20Caminata%20aleatoria.ipynb) | Tarea | Simulación de trayectorias de capital y comportamiento de una caminata aleatoria |
 | [`T02 - Análisis de sensibilidad.ipynb`](T02%20-%20An%C3%A1lisis%20de%20sensibilidad.ipynb) | Tarea | Valuación de calls y puts por Monte Carlo, verificación de paridad y sensibilidad a los cinco parámetros del modelo |
 | [`T03 - Griegas y aproximación del valor de una opción.ipynb`](T03%20-%20Griegas%20y%20aproximaci%C3%B3n%20del%20valor%20de%20una%20opci%C3%B3n.ipynb) | Tarea | Lectura de tres contratos a partir de sus sensibilidades, elección por escenario y alcance de una aproximación de Taylor a seis meses |
+| [`EX1 - Correcciones del primer parcial.ipynb`](EX1%20-%20Correcciones%20del%20primer%20parcial.ipynb) | Examen | Volatilidad móvil anualizada para decidir la activación de un contrato y simulación día por día con cambios de tasa, volatilidad e impulso, con cada error del examen documentado en el formato de correcciones |
 
 ---
 
@@ -54,9 +56,9 @@ pip install numpy matplotlib scipy pandas yfinance
 
 ## Notas de ejecución
 
-Los archivos `C04`, `C05` y `C10` requieren datos externos, ya que el primero lee
-`data/aapl_historical_data_2026_h1.csv` desde la ruta relativa del repositorio y los otros
-dos descargan precios de Yahoo Finance en tiempo de ejecución, por lo cual todos necesitan
+Los archivos `C04`, `C05`, `C10` y `EX1` requieren datos externos, ya que `C04` y `EX1` leen
+`data/aapl_historical_data_2026_h1.csv` y `data/ex1_01.xlsx` desde la ruta relativa del
+repositorio y los otros dos descargan precios de Yahoo Finance en tiempo de ejecución, por lo cual todos necesitan
 que esas fuentes estén disponibles antes de correrlos. Los casos de `C05` y `C10` merecen
 una advertencia adicional: al depender de una descarga en vivo, sus cifras se mueven
 conforme avanza el mercado y no reproducen exactamente las que aparecen en las celdas
@@ -76,8 +78,9 @@ valores concretos y perderían su referencia si las celdas se limpiaran.
 
 ```text
 .
-├── C01-C02 … C10/          # Notebooks de clase, numerados por sesión
+├── C01-C02 … C11/          # Notebooks de clase, numerados por sesión
 ├── T01 … T03/              # Tareas entregables
+├── EX1/                    # Correcciones del primer examen parcial
 ├── data/                   # Series de precios usadas por los notebooks
 ├── docs/                   # Plantilla de entregables en Word
 ├── requirements.txt
