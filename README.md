@@ -33,7 +33,7 @@ de su exposición mediante las griegas.
 | [`T01 - Caminata aleatoria.ipynb`](T01%20-%20Caminata%20aleatoria.ipynb) | Tarea | Simulación de trayectorias de capital y comportamiento de una caminata aleatoria |
 | [`T02 - Análisis de sensibilidad.ipynb`](T02%20-%20An%C3%A1lisis%20de%20sensibilidad.ipynb) | Tarea | Valuación de calls y puts por Monte Carlo, verificación de paridad y sensibilidad a los cinco parámetros del modelo |
 | [`T03 - Griegas y aproximación del valor de una opción.ipynb`](T03%20-%20Griegas%20y%20aproximaci%C3%B3n%20del%20valor%20de%20una%20opci%C3%B3n.ipynb) | Tarea | Lectura de tres contratos a partir de sus sensibilidades, elección por escenario y alcance de una aproximación de Taylor a seis meses |
-| [`EX1 - Correcciones del primer parcial.ipynb`](EX1%20-%20Correcciones%20del%20primer%20parcial.ipynb) | Examen | Volatilidad móvil anualizada para decidir la activación de un contrato y simulación día por día con cambios de tasa, volatilidad e impulso, con cada error del examen documentado en el formato de correcciones |
+| [`EX1 - Correcciones del primer parcial.ipynb`](EX1%20-%20Correcciones%20del%20primer%20parcial.ipynb) | Examen | Volatilidad móvil anualizada para decidir la activación de un contrato y simulación día por día con cambios de tasa, volatilidad e impulso, con cada error del examen documentado en el formato de correcciones, además de la autoevaluación del examen escrito sobre payoffs de opciones exóticas, Greeks e intervalo de confianza de Monte Carlo |
 
 ---
 
