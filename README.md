@@ -12,8 +12,9 @@ redactados con la misma estructura: portada con metadatos, índice, secciones nu
 una interpretación escrita después de cada resultado, de manera que cada archivo pueda
 leerse de forma independiente sin necesidad de haber estado en la sesión correspondiente.
 El hilo que los une va de los números pseudoaleatorios que alimentan cualquier simulación
-hasta la valuación de opciones exóticas y de barrera, pasando por la medición puntual
-de su exposición mediante las griegas.
+hasta la valuación de opciones exóticas y de barrera y la reducción de la varianza de esa
+valuación con variables de control, pasando por la medición puntual de su exposición
+mediante las griegas.
 
 ---
 
@@ -30,6 +31,7 @@ de su exposición mediante las griegas.
 | [`C09 - Valuación de opciones exóticas y de barrera.ipynb`](C09%20-%20Valuaci%C3%B3n%20de%20opciones%20ex%C3%B3ticas%20y%20de%20barrera.ipynb) | Clase | Valor de la put europea, asiática y lookback sobre trayectorias completas, y las cuatro variantes de barrera verificadas con la paridad entre in y out |
 | [`C10 - Repaso integral.ipynb`](C10%20-%20Repaso%20integral.ipynb) | Clase | Repaso integral con datos reales de META: payoffs, separación temporal y comparación entre el precio observado y los escenarios simulados |
 | [`C11 - Monte Carlo y Error en el mismo.ipynb`](C11%20-%20Monte%20Carlo%20y%20Error%20en%20el%20mismo.ipynb) | Clase | Convergencia del precio de Monte Carlo hacia Black-Scholes y caída del error con la raíz del número de simulaciones |
+| [`C12 - Black Scholes para valuar opciones asiáticas.ipynb`](C12%20-%20Black%20Scholes%20para%20valuar%20opciones%20asi%C3%A1ticas.ipynb) | Clase | Forma cerrada de la asiática geométrica y su uso como variable de control de la call asiática aritmética sobre 100 trayectorias, con la reducción de varianza medida sobre 1,000 repeticiones y el sesgo de la fórmula de promedio continuo |
 | [`T01 - Caminata aleatoria.ipynb`](T01%20-%20Caminata%20aleatoria.ipynb) | Tarea | Simulación de trayectorias de capital y comportamiento de una caminata aleatoria |
 | [`T02 - Análisis de sensibilidad.ipynb`](T02%20-%20An%C3%A1lisis%20de%20sensibilidad.ipynb) | Tarea | Valuación de calls y puts por Monte Carlo, verificación de paridad y sensibilidad a los cinco parámetros del modelo |
 | [`T03 - Griegas y aproximación del valor de una opción.ipynb`](T03%20-%20Griegas%20y%20aproximaci%C3%B3n%20del%20valor%20de%20una%20opci%C3%B3n.ipynb) | Tarea | Lectura de tres contratos a partir de sus sensibilidades, elección por escenario y alcance de una aproximación de Taylor a seis meses |
@@ -78,7 +80,7 @@ valores concretos y perderían su referencia si las celdas se limpiaran.
 
 ```text
 .
-├── C01-C02 … C11/          # Notebooks de clase, numerados por sesión
+├── C01-C02 … C12/          # Notebooks de clase, numerados por sesión
 ├── T01 … T03/              # Tareas entregables
 ├── EX1/                    # Correcciones del primer examen parcial
 ├── data/                   # Series de precios usadas por los notebooks
