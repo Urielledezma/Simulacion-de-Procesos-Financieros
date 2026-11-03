@@ -14,7 +14,8 @@ leerse de forma independiente sin necesidad de haber estado en la sesión corres
 El hilo que los une va de los números pseudoaleatorios que alimentan cualquier simulación
 hasta la valuación de opciones exóticas y de barrera y la reducción de la varianza de esa
 valuación con variables de control, variables antitéticas y secuencias de cuasi Monte Carlo,
-pasando por la medición puntual de su exposición mediante las griegas.
+pasando por la medición puntual de su exposición mediante las griegas, y desemboca en la
+simulación del valor de un portafolio y la medición de su riesgo.
 
 ---
 
@@ -35,6 +36,7 @@ pasando por la medición puntual de su exposición mediante las griegas.
 | [`C13 - Black Scholes para valuar opciones europeas.ipynb`](C13%20-%20Black%20Scholes%20para%20valuar%20opciones%20europeas.ipynb) | Clase | Variables antitéticas para la call europea: diez pares de clase descontados y contrastados contra Black-Scholes, y 10,000 pares frente a Monte Carlo simple a igual número de pagos |
 | [`C14 - Black Scholes para valuar activos.ipynb`](C14%20-%20Black%20Scholes%20para%20valuar%20activos.ipynb) | Clase | Movimiento browniano geométrico calibrado con 2025 para cinco acciones, trayectorias antitéticas, valor esperado del precio y ubicación del precio real del primer semestre de 2026 en la distribución simulada |
 | [`C15 - Cuasi Montecarlo.ipynb`](C15%20-%20Cuasi%20Montecarlo.ipynb) | Clase | Uniformidad de muestras pseudoaleatorias y comparación entre Monte Carlo y la secuencia de Sobol' sobre una integral y sobre la probabilidad de una normal |
+| [`C16 - Portafolio y Riesgo.ipynb`](C16%20-%20Portafolio%20y%20Riesgo.ipynb) | Clase | Tres portafolios de 100,000 pesos con NVDA, BIMBOA, CEMEX y AZN simulados a un año junto con el tipo de cambio, comparados por su valor esperado, su dispersión y su probabilidad de terminar por debajo del capital |
 | [`T01 - Caminata aleatoria.ipynb`](T01%20-%20Caminata%20aleatoria.ipynb) | Tarea | Simulación de trayectorias de capital y comportamiento de una caminata aleatoria |
 | [`T02 - Análisis de sensibilidad.ipynb`](T02%20-%20An%C3%A1lisis%20de%20sensibilidad.ipynb) | Tarea | Valuación de calls y puts por Monte Carlo, verificación de paridad y sensibilidad a los cinco parámetros del modelo |
 | [`T03 - Griegas y aproximación del valor de una opción.ipynb`](T03%20-%20Griegas%20y%20aproximaci%C3%B3n%20del%20valor%20de%20una%20opci%C3%B3n.ipynb) | Tarea | Lectura de tres contratos a partir de sus sensibilidades, elección por escenario y alcance de una aproximación de Taylor a seis meses |
@@ -61,16 +63,17 @@ pip install numpy matplotlib scipy pandas yfinance
 
 ## Notas de ejecución
 
-Los archivos `C04`, `C05`, `C10`, `C14` y `EX1` requieren datos externos, ya que `C04` y `EX1` leen
+Los archivos `C04`, `C05`, `C10`, `C14`, `C16` y `EX1` requieren datos externos, ya que `C04` y `EX1` leen
 `data/aapl_historical_data_2026_h1.csv` y `data/ex1_01.xlsx` desde la ruta relativa del
-repositorio y los otros tres descargan precios de Yahoo Finance en tiempo de ejecución, por lo cual todos necesitan
+repositorio y los otros cuatro descargan precios de Yahoo Finance en tiempo de ejecución, por lo cual todos necesitan
 que esas fuentes estén disponibles antes de correrlos. Los casos de `C05` y `C10` merecen
 una advertencia adicional: al depender de una descarga en vivo, sus cifras se mueven
 conforme avanza el mercado y no reproducen exactamente las que aparecen en las celdas
 guardadas, de modo que la semilla fija el componente simulado pero no el componente
-descargado. `C14` descarga ventanas históricas fijas y por ello no sigue al mercado, aunque
+descargado. `C14` y `C16` descargan ventanas históricas fijas y por ello no siguen al mercado, aunque
 el precio de cierre se ajusta retroactivamente por dividendos y puede mover las últimas
-decimales de sus cifras entre una ejecución y otra. El resto de los notebooks es autocontenido, y salvo `C04`, que sortea sus
+decimales de sus cifras entre una ejecución y otra, motivo por el cual `C16` cita sus
+valores simulados en pesos redondeados al peso. El resto de los notebooks es autocontenido, y salvo `C04`, que sortea sus
 dados sin semilla, todos la fijan al inicio y por ello entregan exactamente los mismos
 números que aparecen en las celdas de interpretación. El caso de `C07` es distinto por no
 recurrir a la simulación en ningún punto, ya que sus derivadas se calculan sobre una malla
